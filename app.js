@@ -11,7 +11,7 @@ app.listen(3000, () => console.log("Server is running"))
 app.get("/", (req, res) => {
     const blogs = [
         { title: 'First blog', snippet: 'Lorem ipsum dolor sit amet consectetur.' },
-        { title: 'Second blog', snippet: 'Lorem ipsum dolor sit amet consectetur.' },
+        { title: 'Second blog', snippet: 'Lorem ipsum dolor sit.' },
         { title: 'Third blog', snippet: 'Lorem ipsum dolor sit amet consectetur.' }
     ]
     res.render('index', { title: 'Home', blogs });
