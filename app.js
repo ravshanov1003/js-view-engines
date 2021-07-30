@@ -6,7 +6,7 @@ const app = express()
 app.set('view engine', 'ejs');
 
 
-app.listen(5000, () => console.log("Server is running"))
+app.listen(3000, () => console.log("Server is running"))
 
 app.get("/", (req, res) => {
     const blogs = [
@@ -30,5 +30,5 @@ app.get('/about-me', (req, res) => {
 })
 
 app.use((req, res) => {
-    res.status(404).send('<h1>404 - OOPS !</h1>')
+    res.status(404).render('404', { title: 404 })
 })
