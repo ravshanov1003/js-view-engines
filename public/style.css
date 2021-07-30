@@ -1,0 +1,55 @@
+body {
+    min-height: 100%;
+    text-align: center;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav ul li {
+    margin: 0 2rem;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.blogs {
+    width: 50%;
+    margin: 1rem auto;
+    font-size: 20px;
+}
+
+.about {
+    width: 50%;
+    margin: 5rem auto;
+    font-size: 20px;
+}
+
+.form {
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin: 1rem 0;
+}
+
+.form button {
+    width: 30%;
+    padding: 10px;
+    margin: 1rem;
+    font-size: 20px;
+}
