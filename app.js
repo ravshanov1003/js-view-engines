@@ -1,7 +1,15 @@
 const morgan = require('morgan')
 const express = require("express")
+const mongoose = require("mongoose")
 
+// express app
 const app = express()
+
+// connect to MongoDB
+const dbURI = "mongodb://localhost:27017/?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&3t.uriVersion=3&3t.connection.name=localHost&3t.defaultColor=208,60,60&3t.alwaysShowAuthDB=true&3t.alwaysShowDBFromUserRole=true"
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(result => console.log("connected to DB"))
+    .catch(err => console.log(err))
 
 // register view engine
 app.set('view engine', 'ejs');
