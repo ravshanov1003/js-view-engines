@@ -63,8 +63,6 @@ app.get('/blogs', (req, res) => {
         .catch(err => console.log(err))
 })
 
-<<
-<< << < HEAD
 app.post("/blogs", (req, res) => {
     const blog = new Blog(req.body)
 
