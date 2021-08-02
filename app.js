@@ -82,15 +82,12 @@ app.delete('/blogs/:id', (req, res) => {
         .then(result => res.json({ redirect: '/blogs' }))
         .catch(err => console.log(err))
 })
-
 app.get('/create', (req, res) => {
     res.render('create', { title: 'Create a new Blog' })
 })
-
 app.get('/about-me', (req, res) => {
     res.redirect('/about')
 })
-
 app.use((req, res) => {
     res.status(404).render('404', { title: 404 })
 })
