@@ -9,6 +9,10 @@ body {
     justify-content: space-around;
 }
 
+.nav h1 {
+    font-size: 34px;
+}
+
 .nav ul {
     display: flex;
 }
@@ -19,13 +23,30 @@ body {
 }
 
 a {
+    color: rgb(66, 66, 66);
     text-decoration: none;
 }
 
 .blogs {
-    width: 50%;
+    width: 80%;
     margin: 1rem auto;
     font-size: 20px;
+    text-align: start;
+}
+
+.content {
+    margin-left: 20px;
+}
+
+.blogs a {
+    display: block;
+    margin: 40px, 0;
+    padding-left: 30px;
+    border-left: 4px solid crimson;
+}
+
+.blogs a:hover h2 {
+    color: crimson;
 }
 
 .about {

@@ -8,13 +8,13 @@
 
             <div>
                 <h1>Form</h1>
-                <form class="form" action="">
+                <form class="form" action="/blogs" method="POST">
                     <label for="title">Blog title</label>
-                    <input type="text" id="title" required>
-                    <label for="snipped">Blog snipped</label>
-                    <input type="text" id="title" required>
-                    <label for="title">Blog title</label>
-                    <textarea name="" id="body" cols="63" rows="10" required></textarea>
+                    <input type="text" id="title" name="title" required>
+                    <label for="snippet">Blog snippet</label>
+                    <input type="text" id="title" name="snippet" required>
+                    <label for="body">Blog title</label>
+                    <textarea id="body" cols="63" rows="10" name="body" required></textarea>
                     <button type="submit">Submit</button>
                 </form>
             </div>
