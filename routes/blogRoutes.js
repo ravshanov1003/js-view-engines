@@ -1,5 +1,7 @@
 const express = require('express')
 
+const Blog = require("../models/blog")
+
 const router = express.Router()
 
 router.get('/blogs', (req, res) => {
@@ -16,6 +18,10 @@ router.post("/blogs", (req, res) => {
         .catch(err => console.log(err))
 })
 
+router.get('/create', (req, res) => {
+    res.render('create', { title: 'Create a new Blog' })
+})
+
 router.get('/blogs/:id', (req, res) => {
     const id = req.params.id;
     Blog.findById(id)
@@ -29,6 +35,5 @@ router.delete('/blogs/:id', (req, res) => {
         .then(result => res.json({ redirect: '/blogs' }))
         .catch(err => console.log(err))
 })
-router.get('/blogs/create', (req, res) => {
-    res.render('create', { title: 'Create a new Blog' })
-})
+
+module.exports = router;

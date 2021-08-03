@@ -2,7 +2,7 @@ const morgan = require('morgan')
 const express = require("express")
 const mongoose = require("mongoose")
 
-const Blog = require("./models/blog")
+const blogRoutes = require('./routes/blogRoutes')
 
 // express app
 const app = express()
@@ -21,30 +21,6 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
-// mongoose and mongo sandbox routes
-app.get('/add-blog', (req, res) => {
-    const blog = new Blog({
-        title: "new blog ten",
-        snippet: 'about my new blog ',
-        body: 'more about my new blog in here'
-    })
-    blog.save()
-        .then((result) => res.send(result))
-        .catch(err => console.log(err))
-})
-
-app.get('/all-blogs', (req, res) => {
-    Blog.find()
-        .then(result => res.send(result))
-        .catch(err => console.log(err))
-})
-
-app.get('/single-blog', (req, res) => {
-    Blog.findById("61064bbeee0afc23fc223dda")
-        .then(result => res.send(result))
-        .catch(err => console.log(err))
-
-})
 
 app.get("/", (req, res) => {
     res.redirect("/blogs")
@@ -55,6 +31,7 @@ app.get('/about', (req, res) => {
 })
 
 // blog route
+app.use(blogRoutes)
 
 app.get('/about-me', (req, res) => {
     res.redirect('/about')
